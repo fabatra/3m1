@@ -3,388 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano de Estudo, Pendências e Diagnósticos - Matemática 3M1</title>
+    <title>Evolução e Pendências - Matemática 3M1</title>
     <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #2563eb;
-            --accent: #f59e0b;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --border: #e2e8f0;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --success: #10b981;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 1.8rem;
-        }
-
-        header p {
-            margin: 0;
-            opacity: 0.9;
-            font-size: 1rem;
-        }
-
-        .channel-banner {
-            background-color: #fef3c7;
-            border-left: 5px solid var(--accent);
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
-
-        .section-title {
-            color: var(--primary);
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 12px;
-            margin-bottom: 15px;
-        }
-
-        .descritor-badge {
-            background-color: #dbeafe;
-            color: #1e40af;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        .status-badge {
-            font-weight: bold;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            color: white;
-        }
-
-        .status-danger { background-color: var(--danger); }
-        .status-warning { background-color: var(--warning); }
-        .status-success { background-color: var(--success); }
-
-        .card-title {
-            margin: 0;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
-
-        .links-group {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 12px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: background-color 0.2s;
-        }
-
-        .btn-github {
-            background-color: #24292e;
-            color: white;
-        }
-
-        .btn-github:hover { background-color: #000000; }
-
-        .btn-youtube {
-            background-color: #ff0000;
-            color: white;
-        }
-
-        .btn-youtube:hover { background-color: #cc0000; }
-
-        .student-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-
-        .student-table th {
-            background-color: var(--primary);
-            color: white;
-            text-align: left;
-            padding: 12px 15px;
-            font-size: 0.9rem;
-        }
-
-        .student-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-
-        .student-table tr:hover {
-            background-color: #f1f5f9;
-        }
-
-        .note {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #94a3b8;
-            font-size: 0.85rem;
-        }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; margin: 0; padding: 15px; font-size: 0.85rem; }
+        .container { max-width: 1000px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        h1 { color: #1e3a8a; margin: 0 0 6px 0; font-size: 1.4rem; }
+        p.sub { color: #64748b; margin: 0 0 15px 0; }
+        .banner { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 10px 14px; border-radius: 4px; margin-bottom: 15px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+        .banner a { color: #b45309; font-weight: bold; text-decoration: none; }
+        .grid-links { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .btn-diag { background: #2563eb; color: #fff; padding: 6px 10px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.78rem; }
+        .btn-yt { background: #cc0000; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        th, td { border: 1px solid #e2e8f0; padding: 8px 10px; text-align: left; vertical-align: top; }
+        th { background: #1e3a8a; color: #fff; font-weight: 600; }
+        tr:nth-child(even) { background: #f8fafc; }
+        .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-weight: 600; font-size: 0.72rem; margin: 1px; }
+        .ok { background: #dcfce7; color: #15803d; }
+        .evo { background: #e0e7ff; color: #3730a3; }
+        .warn { background: #fee2e2; color: #b91c1c; }
+        .info { background: #fef9c3; color: #a16207; }
+        .act { color: #2563eb; font-weight: bold; text-decoration: none; margin-right: 6px; font-size: 0.75rem; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>Acompanhamento, Pendências e Orientações - Turma 3M1</h1>
-        <p>Plano individualizado de reavaliação, agilidade cognitiva e reforço em vídeo-aulas para PAEBES, AMA e ENEM.</p>
-    </header>
+    <h1>Acompanhamento de Evolução e Pendências - 3M1</h1>
+    <p class="sub">Painel individual de acompanhamento pedagógico para o PAEBES, AMA e ENEM.</p>
 
-    <div class="channel-banner">
-        <strong>📺 Canal Oficial de Apoio Pedagógico:</strong> Prof. Fabricio Trancoso 
-        <a href="https://www.youtube.com/@professortrancoso" target="_blank" style="color: #b45309; font-weight: bold; margin-left: 8px;">Acessar Canal no YouTube &rarr;</a>
+    <div class="banner">
+        <span>📺 <strong>Apoio Pedagógico:</strong> Vídeo-aulas no canal do Prof. Fabricio Trancoso</span>
+        <a href="https://www.youtube.com/@professortrancoso" target="_blank">Acessar Canal &rarr;</a>
     </div>
 
-    <!-- SEÇÃO 1: REPOSITÓRIO GERAL DE RECURSOS -->
-    <h2 class="section-title">1. Diagnósticos e Vídeo-Aulas por Descritor</h2>
-
-    <!-- D124 -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Equação da Reta (Geometria Analítica)</h3>
-            <span class="descritor-badge">D124</span>
-        </div>
-        <p>Aferição da equação geral, reduzida, coeficiente angular e alinhamento de pontos.</p>
-        <div class="links-group">
-            <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 Diagnóstico D124</a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D124</a>
-        </div>
+    <div class="grid-links">
+        <a href="https://fabatra.github.io/d124" target="_blank" class="btn-diag">D124 (Reta)</a>
+        <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn-diag">QE (Exponencial)</a>
+        <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn-diag btn-yt">📺 Aula Exponencial</a>
+        <a href="https://fabatra.github.io/d088" target="_blank" class="btn-diag">D088 (Álgebra)</a>
+        <a href="https://fabatra.github.io/d085" target="_blank" class="btn-diag">D085 (Geometria)</a>
+        <a href="https://fabatra.github.io/d074" target="_blank" class="btn-diag">D074 (Gráficos)</a>
     </div>
 
-    <!-- Exponencial -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Função e Equação Exponencial</h3>
-            <span class="descritor-badge">Exponencial</span>
-        </div>
-        <p>Crescimento/decrescimento e equações com incógnita no expoente.</p>
-        <div class="links-group">
-            <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">📝 Diagnóstico Exponencial</a>
-            <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula Equação Exponencial</a>
-        </div>
-        <p class="note">💡 *A aula de Equação Exponencial fornece a base conceitual para o tema de Função Exponencial.*</p>
-    </div>
-
-    <!-- D088 -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Álgebra e Equações/Sistemas</h3>
-            <span class="descritor-badge">D088</span>
-        </div>
-        <p>Modelagem e resolução de equações do 1º/2º grau e sistemas lineares.</p>
-        <div class="links-group">
-            <a href="https://fabatra.github.io/d088" target="_blank" class="btn btn-github">📝 Diagnóstico D088</a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D088</a>
-        </div>
-    </div>
-
-    <!-- D085 -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Geometria Plana (Perímetro e Área)</h3>
-            <span class="descritor-badge">D085</span>
-        </div>
-        <p>Cálculo de áreas, decomposição de polígonos e Teorema de Pitágoras.</p>
-        <div class="links-group">
-            <a href="https://fabatra.github.io/d085" target="_blank" class="btn btn-github">📝 Diagnóstico D085</a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D085</a>
-        </div>
-    </div>
-
-    <!-- D074 -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Leitura de Gráficos e Tabelas</h3>
-            <span class="descritor-badge">D074</span>
-        </div>
-        <p>Tratamento da informação, análise estatística e interpretação de tendências.</p>
-        <div class="links-group">
-            <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">📝 Diagnóstico D074</a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D074</a>
-        </div>
-    </div>
-
-    <!-- SEÇÃO 2: PENDÊNCIAS INDIVIDUAIS DOS ALUNOS -->
-    <h2 class="section-title">2. Mapeamento de Pendências e Orientações para Alunos</h2>
-
-    <!-- Tabela Resumo para Consulta Rápida -->
-    <table class="student-table">
+    <table>
         <thead>
             <tr>
                 <th>Aluno(a)</th>
-                <th>Desempenho Registrado</th>
-                <th>Pendência / Ação em Sala</th>
-                <th>Links de Orientação</th>
+                <th>Realizados / Nota (de 5)</th>
+                <th>Pendências / Orientações</th>
+                <th>Ações Finais</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Rakely</strong></td>
-                <td>Exponencial: 2/5 (Necessita rever)</td>
-                <td>Assistir à vídeo-aula de Equação Exponencial e refazer diagnóstica até atingir 5/5.</td>
-                <td>
-                    <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn btn-youtube">📺 Aula</a>
-                    <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">📝 Teste</a>
-                </td>
-            </tr>
-            <tr>
                 <td><strong>Kethelen Liberato</strong></td>
-                <td>D088 e D085: 2/5 | QE: 2 &rarr; 5</td>
-                <td>Reforço em Álgebra e Geometria Plana. Fazer refazimento focado em gabaritar.</td>
-                <td>
-                    <a href="https://fabatra.github.io/d088" target="_blank" class="btn btn-github">📝 D088</a>
-                    <a href="https://fabatra.github.io/d085" target="_blank" class="btn btn-github">📝 D085</a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Ester</strong></td>
-                <td>D124: 3/5 | D074: 3/5 | D085: 4/5</td>
-                <td>Refazer D124 e D074 para transicionar de 3 para 5 acertos.</td>
-                <td>
-                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
-                    <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">📝 D074</a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Maira</strong></td>
-                <td>D124: 4/5 (1 chute) | D074/088/085: 4/5</td>
-                <td>Eliminar dependência de chute no D124. Rever vídeo e fazer gabarito rápido.</td>
-                <td>
-                    <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">📺 Aula</a>
-                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Eduardo</strong></td>
-                <td>D124: 3/5</td>
-                <td>Reforço em Equação da Reta. Assistir vídeo-aula e reavaliar.</td>
-                <td>
-                    <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">📺 Aula</a>
-                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Grazi</strong></td>
-                <td>D124: 5 | D088: 5 | D085: 5 | D074: 3/5</td>
-                <td>Ajuste pontual em Leitura de Gráficos (D074). Fazer rodada de velocidade.</td>
-                <td>
-                    <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">📝 D074</a>
-                </td>
+                <td><span class="tag ok">D124: 4</span> <span class="tag evo">QE: 2 &rarr; 5</span> <span class="tag ok">D085: 2</span></td>
+                <td><span class="tag warn">Pendentes: D088, D074</span></td>
+                <td><a href="https://fabatra.github.io/d088" target="_blank" class="act">D088</a> <a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
             </tr>
             <tr>
                 <td><strong>Ezequiel</strong></td>
-                <td>QE: 1 &rarr; 4/5 | D088 e D085: 4/5</td>
-                <td>Treinar velocidade no refazimento do teste exponencial para buscar o 5/5 célere.</td>
-                <td>
-                    <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">📝 Teste</a>
-                </td>
+                <td><span class="tag evo">QE: 1 &rarr; 4</span> <span class="tag ok">D085: 4</span></td>
+                <td><span class="tag warn">Pendentes: D088, D074</span></td>
+                <td><a href="https://fabatra.github.io/d088" target="_blank" class="act">D088</a> <a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
             </tr>
             <tr>
-                <td><strong>Kaylane, Matheus S., Laysa, Lucas M.</strong></td>
-                <td>D124: 3/5</td>
-                <td>Refazer a prova diagnóstica do D124 aplicando memorização e cálculo rápido.</td>
-                <td>
-                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
-                </td>
+                <td><strong>Ana Clara Barbosa</strong></td>
+                <td><span class="tag ok">QE: 5</span> <span class="tag ok">D088: 4</span></td>
+                <td><span class="tag warn">Pendentes: D085, D074</span></td>
+                <td><a href="https://fabatra.github.io/d085" target="_blank" class="act">D085</a> <a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
             </tr>
             <tr>
-                <td><strong>Beatriz & Gustavo</strong></td>
-                <td>Atendimento pendente</td>
-                <td>Realizar alinhamento individual em sala e aplicar os diagnósticos de entrada.</td>
-                <td>
-                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 Diagnóstico</a>
-                </td>
+                <td><strong>Simoniky</strong></td>
+                <td><span class="tag ok">D124: 4</span> <span class="tag ok">QE: 3</span> <span class="tag ok">D088: 4</span> <span class="tag ok">D074: 4</span></td>
+                <td><span class="tag warn">Pendente: D085</span></td>
+                <td><a href="https://fabatra.github.io/d085" target="_blank" class="act">D085</a></td>
             </tr>
             <tr>
-                <td><strong>Rafaela, Marcely, Walber, Ana Clara, Gabriel, Yuri</strong></td>
-                <td>Desempenho Alto (4/5 e 5/5)</td>
-                <td>Fase de automação e agilidade: refazer diagnósticos em tempo reduzido para fixação PAEBES.</td>
-                <td>
-                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 Geral</a>
-                </td>
+                <td><strong>Rakely</strong></td>
+                <td><span class="tag ok">QE: 2</span> <span class="tag ok">D085: 4</span></td>
+                <td><span class="tag info">Rever aula QE</span> <span class="tag warn">Pendentes: D088, D074</span></td>
+                <td><a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="act">📺 Aula QE</a> <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="act">QE</a></td>
             </tr>
-        </tbody>
-    </table>
-
-    <footer>
-        <p>Acompanhamento Pedagógico Reta Final 3M1 - PAEBES / AMA / ENEM</p>
-    </footer>
-</div>
-
-</body>
-</html>
+            <tr>
+                <td><strong>Marcely</strong></td>
+                <td><span class="tag ok">D124: 5</span> <span class="tag ok">QE: 4</span> <span class="tag ok">D088: 5</span> <span class="tag ok">D085: 4</span></td>
+                <td><span class="tag warn">Pendente: D074</span></td>
+                <td><a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
+            </tr>
+            <tr>
+                <td><strong>Laysa</strong></td>
+                <td><span class="tag ok">D124: 3</span> <span class="tag ok">QE: 5</span> <span class="tag ok">D088: 4</span> <span class="tag ok">D085: 5</span></td>
+                <td><span class="tag warn">Pendente: D074</span></td>
+                <td><a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
+            </tr>
+            <tr>
+                <td><strong>Ketellyn Vitoria</strong></td>
+                <td><span class="tag ok">D124: 4</span> <span class="tag ok">QE: 5</span> <span class="tag ok">D085: 4</span></td>
+                <td><span class="tag warn">Pendentes: D088, D074</span></td>
+                <td><a href="https://fabatra.github.io/d088" target="_blank" class="act">D088</a> <a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
+            </tr>
+            <tr>
+                <td><strong>Lucas Martins</strong></td>
+                <td><span class="tag ok">D124: 3</span> <span class="tag ok">QE: 5</span> <span class="tag ok">D088: 5</span> <span class="tag ok">D085: 3</span></td>
+                <td><span class="tag warn">Pendente: D074</span></td>
+                <td><a href="https://fabatra.github.io/d074" target="_blank" class="act">D074</a></td>
+            </tr>
+            <tr>
+                <td><strong>Rafaela</strong></td>
+                <td><span class="
