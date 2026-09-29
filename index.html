@@ -3,15 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ações Rápidas e Vídeo-Aulas - Turma 3M1</title>
+    <title>Acompanhamento 3M1 - Canal Prof. Trancoso</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b; padding: 15px; margin: 0; font-size: 13px; }
-        .card { background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; max-width: 980px; margin: auto; }
-        h2 { color: #1e3a8a; margin: 0 0 8px 0; font-size: 1.2rem; }
-        .banner { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 8px 12px; margin-bottom: 12px; font-size: 12px; }
-        .banner a { color: #b45309; font-weight: bold; text-decoration: none; margin-right: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-        th, td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: left; font-size: 12px; vertical-align: top; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; color: #0f172a; padding: 15px; margin: 0; font-size: 13px; }
+        .card { background: #fff; padding: 18px; border-radius: 12px; border: 1px solid #cbd5e1; max-width: 980px; margin: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h2 { color: #1e3a8a; margin: 0 0 12px 0; font-size: 1.3rem; }
+
+        /* MURAL DE DESTAQUE BRILHANTE DO CANAL */
+        .yt-highlight-banner {
+            background: linear-gradient(135deg, #ff0000 0%, #b30000 50%, #800000 100%);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.35);
+            border: 2px solid #fef08a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yt-highlight-banner h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.35rem;
+            color: #fef08a;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .yt-highlight-banner p {
+            margin: 0 0 12px 0;
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: #f8fafc;
+            max-width: 900px;
+        }
+
+        .yt-badge-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .yt-badge-item {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: bold;
+        }
+
+        .yt-main-btn {
+            display: inline-block;
+            background: #fef08a;
+            color: #854d0e;
+            font-size: 0.95rem;
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .yt-main-btn:hover {
+            background: #fef9c3;
+            transform: scale(1.03);
+        }
+
+        /* TABELA DE ALUNOS */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; font-size: 12px; vertical-align: top; }
         th { background: #1e3a8a; color: #fff; font-weight: 600; }
         tr:nth-child(even) { background: #f8fafc; }
         .tag { display: inline-block; padding: 2px 5px; border-radius: 3px; font-weight: 600; font-size: 11px; margin: 1px; }
@@ -24,14 +90,28 @@
 <body>
 
 <div class="card">
-    <h2>Acompanhamento 3M1 - Ações Rápidas por Vídeo-Aulas (@professortrancoso)</h2>
+    <h2>Acompanhamento Pedagógico e Evolução - Turma 3M1</h2>
     
-    <div class="banner">
-        <strong>📺 Canal Oficial:</strong> <a href="https://www.youtube.com/@professortrancoso" target="_blank">@professortrancoso</a> | 
-        <strong>Atalhos de Aulas:</strong> 
-        <a href="https://www.youtube.com/@professortrancoso" target="_blank">📐 Equação da Reta</a>
-        <a href="https://www.youtube.com/@professortrancoso" target="_blank">🎵 Paródia Asa Branca (Coef. Angular)</a>
-        <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank">📈 Equação Exponencial</a>
+    <!-- MURAL EM DESTAQUE BRILHANTE E EXPANDIDO -->
+    <div class="yt-highlight-banner">
+        <h3>📺 CANAL OFICIAL DE VÍDEO-AULAS DA TURMA 3M1</h3>
+        <p>
+            <strong>Atenção Alunos!</strong> Todos os conteúdos, explicações de cada descritor do PAEBES/AMA/ENEM, resoluções passo a passo e recursos lúdicos de fixação foram gravados e disponibilizados exclusivamente no canal do <strong>Prof. Fabricio Trancoso</strong> no YouTube.
+            <br>Se você precisa refazer um diagnóstico, sanar dúvidas ou acelerar seu tempo de resolução, assista às vídeo-aulas correspondentes antes de realizar as reavaliações!
+        </p>
+        
+        <div class="yt-badge-list">
+            <span class="yt-badge-item">📐 Equação da Reta (D124)</span>
+            <span class="yt-badge-item">🎵 Paródia Asa Branca (Coeficiente Angular)</span>
+            <span class="yt-badge-item">📈 Passo a Passo Equação Exponencial</span>
+            <span class="yt-badge-item">🧮 Álgebra & Equações (D088)</span>
+            <span class="yt-badge-item">📏 Geometria Plana (D085)</span>
+            <span class="yt-badge-item">📊 Gráficos & Tabelas (D074)</span>
+        </div>
+
+        <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt-main-btn">
+            ▶️ ACESSAR O CANAL @professortrancoso NO YOUTUBE
+        </a>
     </div>
 
     <table>
@@ -39,7 +119,7 @@
             <tr>
                 <th>Aluno(a)</th>
                 <th>Evolução / Realizado</th>
-                <th>Ações Rápidas (Vídeo-Aulas do Canal)</th>
+                <th>Ações Rápidas (Vídeo-Aulas + Testes)</th>
                 <th>Orientação Pedagógica</th>
             </tr>
         </thead>
