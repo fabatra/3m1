@@ -3,86 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acompanhamento 3M1 - Canal Prof. Trancoso</title>
+    <title>Acompanhamento e Pendências por Assunto - 3M1</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; color: #0f172a; padding: 15px; margin: 0; font-size: 13px; }
-        .card { background: #fff; padding: 18px; border-radius: 12px; border: 1px solid #cbd5e1; max-width: 980px; margin: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        h2 { color: #1e3a8a; margin: 0 0 12px 0; font-size: 1.3rem; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #0f172a; padding: 15px; margin: 0; font-size: 13px; }
+        .card { background: #fff; padding: 18px; border-radius: 12px; border: 1px solid #cbd5e1; max-width: 1000px; margin: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h2 { color: #1e3a8a; margin: 0 0 12px 0; font-size: 1.25rem; }
 
-        /* MURAL DE DESTAQUE BRILHANTE DO CANAL */
-        .yt-highlight-banner {
+        /* CANAL DO PROFESSOR */
+        .yt-banner {
             background: linear-gradient(135deg, #ff0000 0%, #b30000 50%, #800000 100%);
             color: #ffffff;
-            padding: 20px;
+            padding: 16px 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.35);
+            margin-bottom: 15px;
+            box-shadow: 0 6px 16px rgba(255, 0, 0, 0.25);
             border: 2px solid #fef08a;
-            position: relative;
-            overflow: hidden;
         }
+        .yt-banner h3 { margin: 0 0 6px 0; font-size: 1.2rem; color: #fef08a; }
+        .yt-banner p { margin: 0 0 10px 0; font-size: 0.9rem; color: #f8fafc; line-height: 1.4; }
+        .yt-btn { display: inline-block; background: #fef08a; color: #854d0e; font-weight: 800; padding: 7px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; }
 
-        .yt-highlight-banner h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.35rem;
-            color: #fef08a;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .yt-highlight-banner p {
-            margin: 0 0 12px 0;
-            font-size: 0.95rem;
-            line-height: 1.45;
-            color: #f8fafc;
-            max-width: 900px;
-        }
-
-        .yt-badge-list {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 14px;
-        }
-
-        .yt-badge-item {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            color: #ffffff;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: bold;
-        }
-
-        .yt-main-btn {
-            display: inline-block;
-            background: #fef08a;
-            color: #854d0e;
-            font-size: 0.95rem;
-            font-weight: 800;
-            padding: 10px 20px;
+        /* PAINEL DE LEGENDA DOS DESCRITORES */
+        .desc-legend {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
             border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-            transition: transform 0.2s, background-color 0.2s;
+            margin-bottom: 15px;
+            font-size: 12px;
         }
-
-        .yt-main-btn:hover {
-            background: #fef9c3;
-            transform: scale(1.03);
-        }
+        .desc-legend strong { color: #1e3a8a; }
+        .desc-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+        .desc-item { background: #ffffff; border: 1px solid #cbd5e1; padding: 3px 8px; border-radius: 4px; font-weight: 600; font-size: 11px; }
 
         /* TABELA DE ALUNOS */
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; font-size: 12px; vertical-align: top; }
         th { background: #1e3a8a; color: #fff; font-weight: 600; }
         tr:nth-child(even) { background: #f8fafc; }
-        .tag { display: inline-block; padding: 2px 5px; border-radius: 3px; font-weight: 600; font-size: 11px; margin: 1px; }
+        
+        /* TAGS E BOTÕES */
+        .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-weight: 600; font-size: 11px; margin: 1px; }
         .ok { background: #dcfce7; color: #15803d; }
         .evo { background: #e0e7ff; color: #3730a3; }
+        .warn { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+        
         .yt { color: #cc0000; font-weight: bold; text-decoration: none; margin-right: 6px; display: inline-block; }
         .gh { color: #2563eb; font-weight: bold; text-decoration: none; margin-right: 6px; display: inline-block; }
     </style>
@@ -92,34 +57,37 @@
 <div class="card">
     <h2>Acompanhamento Pedagógico e Evolução - Turma 3M1</h2>
     
-    <!-- MURAL EM DESTAQUE BRILHANTE E EXPANDIDO -->
-    <div class="yt-highlight-banner">
+    <!-- MURAL DO CANAL DO PROFESSOR -->
+    <div class="yt-banner">
         <h3>📺 CANAL OFICIAL DE VÍDEO-AULAS DA TURMA 3M1</h3>
         <p>
-            <strong>Atenção Alunos!</strong> Todos os conteúdos, explicações de cada descritor do PAEBES/AMA/ENEM, resoluções passo a passo e recursos lúdicos de fixação foram gravados e disponibilizados exclusivamente no canal do <strong>Prof. Fabricio Trancoso</strong> no YouTube.
-            <br>Se você precisa refazer um diagnóstico, sanar dúvidas ou acelerar seu tempo de resolução, assista às vídeo-aulas correspondentes antes de realizar as reavaliações!
+            <strong>Atenção Alunos!</strong> Todos os conteúdos, resoluções passo a passo e a <em>Paródia Asa Branca</em> sobre Coeficiente Angular foram gravados exclusivamente no canal do <strong>Prof. Fabricio Trancoso</strong> no YouTube. Assista às aulas para sanar dúvidas e refazer seus testes!
         </p>
-        
-        <div class="yt-badge-list">
-            <span class="yt-badge-item">📐 Equação da Reta (D124)</span>
-            <span class="yt-badge-item">🎵 Paródia Asa Branca (Coeficiente Angular)</span>
-            <span class="yt-badge-item">📈 Passo a Passo Equação Exponencial</span>
-            <span class="yt-badge-item">🧮 Álgebra & Equações (D088)</span>
-            <span class="yt-badge-item">📏 Geometria Plana (D085)</span>
-            <span class="yt-badge-item">📊 Gráficos & Tabelas (D074)</span>
-        </div>
-
-        <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt-main-btn">
+        <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt-btn">
             ▶️ ACESSAR O CANAL @professortrancoso NO YOUTUBE
         </a>
     </div>
 
+    <!-- LEGENDA RÁPIDA DOS DESCRITORES -->
+    <div class="desc-legend">
+        <strong>📌 Legenda de Assuntos Matemáticos por Descritor:</strong>
+        <div class="desc-list">
+            <span class="desc-item">D124: Equação da Reta</span>
+            <span class="desc-item">QE: Função/Equação Exponencial</span>
+            <span class="desc-item">D088: Álgebra e Sistemas</span>
+            <span class="desc-item">D085: Geometria Plana (Áreas)</span>
+            <span class="desc-item">D074: Gráficos e Tabelas</span>
+        </div>
+    </div>
+
+    <!-- TABELA COMPLETA COM ASSUNTOS E DESCRITORES PENDENTES -->
     <table>
         <thead>
             <tr>
                 <th>Aluno(a)</th>
-                <th>Evolução / Realizado</th>
-                <th>Ações Rápidas (Vídeo-Aulas + Testes)</th>
+                <th>Realizados / Nota (de 5)</th>
+                <th>Assuntos / Descritores Pendentes</th>
+                <th>Ações Rápidas (Aulas + Testes)</th>
                 <th>Orientação Pedagógica</th>
             </tr>
         </thead>
@@ -128,140 +96,198 @@
                 <td><strong>Ana Clara Barbosa</strong></td>
                 <td><span class="tag ok">QE: 5/5</span> <span class="tag ok">D088: 4/5</span></td>
                 <td>
+                    <span class="tag warn">D124 - Equação da Reta</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Reta & Asa Branca</a>
                     <a href="https://fabatra.github.io/d124" target="_blank" class="gh">📝 Teste D124</a>
                 </td>
-                <td>Focar na fixação do coeficiente angular via paródia para o D124.</td>
+                <td>Fixar o coeficiente angular via paródia no D124.</td>
             </tr>
             <tr>
                 <td><strong>Edimilson</strong></td>
                 <td><span class="tag ok">D124: 4/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="gh">📝 Teste QE</a>
                 </td>
-                <td>Assistir à aula de Exponencial para avançar nos diagnósticos pendentes.</td>
+                <td>Assistir à aula de Exponencial para dar sequência aos testes.</td>
             </tr>
             <tr>
                 <td><strong>Eduardo</strong></td>
                 <td><span class="tag ok">D124: 3/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="gh">📝 Teste QE</a>
                 </td>
-                <td>Repor conteúdo com as vídeo-aulas devido às faltas.</td>
+                <td>Repor os conteúdos pendentes através das vídeo-aulas devido às faltas.</td>
             </tr>
             <tr>
                 <td><strong>Ester</strong></td>
                 <td><span class="tag ok">D124: 3/5</span> <span class="tag ok">D085: 4/5</span> <span class="tag ok">D074: 3/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/d088" target="_blank" class="gh">📝 Teste D088</a>
                 </td>
-                <td>Acompanhar a aula fazendo os cálculos do passo a passo no caderno.</td>
+                <td>Obrigatório realizar e registrar todos os cálculos no caderno.</td>
             </tr>
             <tr>
                 <td><strong>Ezequiel</strong></td>
                 <td><span class="tag evo">QE: 1 ➔ 4/5</span> <span class="tag ok">D085: 4/5</span></td>
                 <td>
+                    <span class="tag warn">D124 - Equação da Reta</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Reta & Asa Branca</a>
                     <a href="https://fabatra.github.io/d124" target="_blank" class="gh">📝 Teste D124</a>
                 </td>
-                <td>Aplicar a técnica de velocidade para chegar ao 5/5 célere no D124.</td>
+                <td>Treinar agilidade para buscar o 5/5 rápido no D124 e no QE.</td>
             </tr>
             <tr>
                 <td><strong>Gabriel</strong></td>
                 <td><span class="tag ok">D124: 4/5</span> <span class="tag ok">QE: 4/5</span> <span class="tag ok">D088: 5/5</span> <span class="tag ok">D074: 4/5</span></td>
+                <td><span class="tag warn">D085 - Geometria Plana</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Geometria (D085)</a>
                     <a href="https://fabatra.github.io/d085" target="_blank" class="gh">📝 Teste D085</a>
                 </td>
-                <td>Assistir ao resumo de Geometria Plana e concluir D085.</td>
+                <td>Assistir ao resumo de Geometria Plana para concluir o D085.</td>
             </tr>
             <tr>
                 <td><strong>Grazi</strong></td>
                 <td><span class="tag ok">D124: 5/5</span> <span class="tag ok">QE: 5/5</span> <span class="tag ok">D085: 5/5</span> <span class="tag ok">D074: 3/5</span></td>
+                <td><span class="tag warn">D088 - Álgebra</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Álgebra (D088)</a>
                     <a href="https://fabatra.github.io/d088" target="_blank" class="gh">📝 Teste D088</a>
                 </td>
-                <td>Rever leitura de gráficos e fazer o teste D088 em tempo recorde.</td>
+                <td>Fazer o teste D088 em ritmo acelerado para fechar a matriz.</td>
             </tr>
             <tr>
                 <td><strong>Kaylane</strong></td>
                 <td><span class="tag ok">D124: 3/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Paródia Asa Branca</a>
                     <a href="https://fabatra.github.io/d124" target="_blank" class="gh">📝 Refazer D124</a>
                 </td>
-                <td>Memorizar a fórmula do coeficiente angular via música e refazer D124.</td>
+                <td>Refazer D124 aplicando a memorização da paródia do coeficiente angular.</td>
             </tr>
             <tr>
                 <td><strong>Ketellyn Vitoria</strong></td>
                 <td><span class="tag ok">D124: 4/5</span> <span class="tag ok">QE: 5/5</span> <span class="tag ok">D085: 4/5</span></td>
                 <td>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Álgebra (D088)</a>
                     <a href="https://fabatra.github.io/d088" target="_blank" class="gh">📝 Teste D088</a>
                 </td>
-                <td>Ritmo excelente; assistir aula de apoio e fechar D088.</td>
+                <td>Excelente desempenho; realizar os testes D088 e D074.</td>
             </tr>
             <tr>
                 <td><strong>Kethelen Liberato</strong></td>
                 <td><span class="tag ok">D124: 4/5</span> <span class="tag evo">QE: 2 ➔ 5/5</span> <span class="tag ok">D085: 2/5</span></td>
                 <td>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Álgebra (D088)</a>
                     <a href="https://fabatra.github.io/d088" target="_blank" class="gh">📝 Teste D088</a>
                 </td>
-                <td>Manter o mesmo método de sucesso usado na aula de Exponencial.</td>
+                <td>Manter o mesmo método focado em vídeo-aula que gerou o 5/5 em Exponencial.</td>
             </tr>
             <tr>
                 <td><strong>Laysa</strong></td>
                 <td><span class="tag ok">D124: 3/5</span> <span class="tag ok">QE: 5/5</span> <span class="tag ok">D088: 4/5</span> <span class="tag ok">D085: 5/5</span></td>
+                <td><span class="tag warn">D074 - Gráficos/Tabelas</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Gráficos (D074)</a>
                     <a href="https://fabatra.github.io/d074" target="_blank" class="gh">📝 Teste D074</a>
                 </td>
-                <td>Realizar D074 para gabaritar todos os descritores.</td>
+                <td>Realizar o teste D074 para completar 100% dos descritores.</td>
             </tr>
             <tr>
                 <td><strong>Lucas Martins</strong></td>
                 <td><span class="tag ok">D124: 3/5</span> <span class="tag ok">QE: 5/5</span> <span class="tag ok">D088: 5/5</span> <span class="tag ok">D085: 3/5</span></td>
+                <td><span class="tag warn">D074 - Gráficos/Tabelas</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Gráficos (D074)</a>
                     <a href="https://fabatra.github.io/d074" target="_blank" class="gh">📝 Teste D074</a>
                 </td>
-                <td>Treino de velocidade para resolução automática.</td>
+                <td>Treinar resolução automática e célere para a avaliação do D074.</td>
             </tr>
             <tr>
                 <td><strong>Maira</strong></td>
                 <td><span class="tag ok">D124: 4/5 (1 chute)</span> <span class="tag ok">D074: 4/5</span> <span class="tag ok">D088: 4/5</span> <span class="tag ok">D085: 4/5</span></td>
+                <td><span class="tag warn">QE - Exponencial</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Paródia Asa Branca</a>
                     <a href="https://fabatra.github.io/d124" target="_blank" class="gh">📝 Refazer D124</a>
                 </td>
-                <td>Rever a paródia para eliminar a dúvida de cálculo e garantir o 5/5 consciente.</td>
+                <td>Eliminar dependência de chute no D124 através de revisão e fazer o teste QE.</td>
             </tr>
             <tr>
                 <td><strong>Marcely</strong></td>
                 <td><span class="tag ok">D124: 5/5</span> <span class="tag ok">QE: 4/5</span> <span class="tag ok">D088: 5/5</span> <span class="tag ok">D085: 4/5</span></td>
+                <td><span class="tag warn">D074 - Gráficos/Tabelas</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Gráficos (D074)</a>
                     <a href="https://fabatra.github.io/d074" target="_blank" class="gh">📝 Teste D074</a>
                 </td>
-                <td>Desempenho de destaque; realizar último diagnóstico D074.</td>
+                <td>Desempenho consistente; realizar último diagnóstico D074.</td>
             </tr>
             <tr>
                 <td><strong>Maria Vitoria</strong></td>
                 <td><span class="tag ok">D124: 4/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="gh">📝 Teste QE</a>
                 </td>
-                <td>Assistir aula de apoio antes do teste exponencial.</td>
+                <td>Assistir aula de apoio antes de avançar nos demais diagnósticos.</td>
             </tr>
             <tr>
                 <td><strong>Matheus Santos</strong></td>
                 <td><span class="tag ok">D124: 3/5</span></td>
+                <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Reta & Asa Branca</a>
                     <a href="https://fabatra.github.io/d124" target="_blank" class="gh">📝 Refazer D124</a>
@@ -271,47 +297,64 @@
             <tr>
                 <td><strong>Rafaela</strong></td>
                 <td><span class="tag ok">D124: 5/5</span> <span class="tag ok">QE: 5/5</span> <span class="tag ok">D088: 5/5</span> <span class="tag ok">D074: 5/5</span></td>
+                <td><span class="tag warn">D085 - Geometria Plana</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Geometria (D085)</a>
                     <a href="https://fabatra.github.io/d085" target="_blank" class="gh">📝 Teste D085</a>
                 </td>
-                <td>Fase final de simulação de tempo reduzido para PAEBES/ENEM.</td>
+                <td>Simulação de tempo reduzido para o PAEBES/ENEM ao concluir D085.</td>
             </tr>
             <tr>
                 <td><strong>Rakely</strong></td>
                 <td><span class="tag ok">QE: 2/5</span> <span class="tag ok">D085: 4/5</span></td>
                 <td>
+                    <span class="tag warn">D124 - Equação da Reta</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="gh">📝 Refazer QE</a>
                 </td>
-                <td>Obrigatório assistir à vídeo-aula completa antes da reavaliação.</td>
+                <td>Obrigatório assistir à vídeo-aula completa antes de refazer o teste QE.</td>
             </tr>
             <tr>
                 <td><strong>Simoniky</strong></td>
                 <td><span class="tag ok">D124: 4/5</span> <span class="tag ok">QE: 3/5</span> <span class="tag ok">D088: 4/5</span> <span class="tag ok">D074: 4/5</span></td>
+                <td><span class="tag warn">D085 - Geometria Plana</span></td>
                 <td>
                     <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="yt">📺 Aula Geometria (D085)</a>
                     <a href="https://fabatra.github.io/d085" target="_blank" class="gh">📝 Teste D085</a>
                 </td>
-                <td>Assistir aula de apoio para fechar D085.</td>
+                <td>Assistir à aula de Geometria Plana para fechar o D085.</td>
             </tr>
             <tr>
                 <td><strong>Walber</strong></td>
                 <td><span class="tag ok">D124: 5/5</span> <span class="tag ok">D085: 4/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D088 - Álgebra</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="gh">📝 Teste QE</a>
                 </td>
-                <td>Avançar para a lista de Exponencial e Álgebra.</td>
+                <td>Excelente base inicial; avançar para os testes de Exponencial e Álgebra.</td>
             </tr>
             <tr>
                 <td><strong>Yuri</strong></td>
                 <td><span class="tag ok">D124: 4/5</span> <span class="tag ok">D088: 4/5</span></td>
                 <td>
+                    <span class="tag warn">QE - Exponencial</span>
+                    <span class="tag warn">D085 - Geometria Plana</span>
+                    <span class="tag warn">D074 - Gráficos/Tabelas</span>
+                </td>
+                <td>
                     <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="yt">📺 Aula Eq. Exponencial</a>
                     <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="gh">📝 Teste QE</a>
                 </td>
-                <td>Registrar passos de resolução no caderno durante as exibições.</td>
+                <td>Registrar os passos de resolução no caderno durante os próximos testes.</td>
             </tr>
         </tbody>
     </table>
