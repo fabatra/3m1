@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano de Estudo e Diagnósticos - Matemática 3M1</title>
+    <title>Plano de Estudo, Pendências e Diagnósticos - Matemática 3M1</title>
     <style>
         :root {
             --primary: #1e3a8a;
@@ -13,6 +13,9 @@
             --card-bg: #ffffff;
             --text: #1e293b;
             --border: #e2e8f0;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
         }
 
         body {
@@ -25,7 +28,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -56,6 +59,15 @@
             border-radius: 8px;
             margin-bottom: 25px;
             font-size: 0.95rem;
+        }
+
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
         }
 
         .card {
@@ -91,6 +103,18 @@
             font-size: 0.85rem;
         }
 
+        .status-badge {
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .status-danger { background-color: var(--danger); }
+        .status-warning { background-color: var(--warning); }
+        .status-success { background-color: var(--success); }
+
         .card-title {
             margin: 0;
             font-size: 1.2rem;
@@ -99,20 +123,20 @@
 
         .links-group {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 8px;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: background-color 0.2s;
         }
 
@@ -121,17 +145,41 @@
             color: white;
         }
 
-        .btn-github:hover {
-            background-color: #000000;
-        }
+        .btn-github:hover { background-color: #000000; }
 
         .btn-youtube {
             background-color: #ff0000;
             color: white;
         }
 
-        .btn-youtube:hover {
-            background-color: #cc0000;
+        .btn-youtube:hover { background-color: #cc0000; }
+
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .student-table th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+            font-size: 0.9rem;
+        }
+
+        .student-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .student-table tr:hover {
+            background-color: #f1f5f9;
         }
 
         .note {
@@ -153,103 +201,188 @@
 
 <div class="container">
     <header>
-        <h1>Acompanhamento e Vídeos - Turma 3M1</h1>
-        <p>Avaliando desempenho, agilidade cognitiva e reforço com vídeo-aulas para PAEBES, AMA e ENEM.</p>
+        <h1>Acompanhamento, Pendências e Orientações - Turma 3M1</h1>
+        <p>Plano individualizado de reavaliação, agilidade cognitiva e reforço em vídeo-aulas para PAEBES, AMA e ENEM.</p>
     </header>
 
     <div class="channel-banner">
-        <strong>📺 Canal Oficial de Apoio:</strong> Prof. Fabricio Trancoso 
-        <a href="https://www.youtube.com/@professortrancoso" target="_blank" style="color: #b45309; font-weight: bold; margin-left: 8px;">Acessar Canal YouTube &rarr;</a>
+        <strong>📺 Canal Oficial de Apoio Pedagógico:</strong> Prof. Fabricio Trancoso 
+        <a href="https://www.youtube.com/@professortrancoso" target="_blank" style="color: #b45309; font-weight: bold; margin-left: 8px;">Acessar Canal no YouTube &rarr;</a>
     </div>
+
+    <!-- SEÇÃO 1: REPOSITÓRIO GERAL DE RECURSOS -->
+    <h2 class="section-title">1. Diagnósticos e Vídeo-Aulas por Descritor</h2>
 
     <!-- D124 -->
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">Equação da Reta (Geometria Analítica)</h2>
+            <h3 class="card-title">Equação da Reta (Geometria Analítica)</h3>
             <span class="descritor-badge">D124</span>
         </div>
-        <p>Avaliação do conhecimento sobre formas da equação da reta, coeficiente angular e posições relativas.</p>
+        <p>Aferição da equação geral, reduzida, coeficiente angular e alinhamento de pontos.</p>
         <div class="links-group">
-            <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">
-                📝 Diagnóstico Interativo (D124)
-            </a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">
-                ▶️ Vídeo-Aula: Equação da Reta
-            </a>
+            <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 Diagnóstico D124</a>
+            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D124</a>
         </div>
     </div>
 
-    <!-- Questão Exponencial -->
+    <!-- Exponencial -->
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">Função e Equação Exponencial</h2>
+            <h3 class="card-title">Função e Equação Exponencial</h3>
             <span class="descritor-badge">Exponencial</span>
         </div>
-        <p>Resolução de problemas envolvendo crescimento/decrescimento e potenciação com incógnita no expoente.</p>
+        <p>Crescimento/decrescimento e equações com incógnita no expoente.</p>
         <div class="links-group">
-            <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">
-                📝 Diagnóstico Interativo (Exponencial)
-            </a>
-            <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn btn-youtube">
-                ▶️ Vídeo-Aula: Passo a Passo Equação Exponencial
-            </a>
+            <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">📝 Diagnóstico Exponencial</a>
+            <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula Equação Exponencial</a>
         </div>
-        <p class="note">💡 *A vídeo-aula de Equação Exponencial serve como base conceitual essencial para os exercícios de Função Exponencial.*</p>
+        <p class="note">💡 *A aula de Equação Exponencial fornece a base conceitual para o tema de Função Exponencial.*</p>
     </div>
 
     <!-- D088 -->
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">Resolução de Problemas Algébricos</h2>
+            <h3 class="card-title">Álgebra e Equações/Sistemas</h3>
             <span class="descritor-badge">D088</span>
         </div>
-        <p>Identificação e resolução de equações, sistemas lineares e modelagem algébrica de situações-problema.</p>
+        <p>Modelagem e resolução de equações do 1º/2º grau e sistemas lineares.</p>
         <div class="links-group">
-            <a href="https://fabatra.github.io/d088" target="_blank" class="btn btn-github">
-                📝 Diagnóstico Interativo (D088)
-            </a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">
-                ▶️ Vídeo-Aula: Álgebra e Questões PAEBES
-            </a>
+            <a href="https://fabatra.github.io/d088" target="_blank" class="btn btn-github">📝 Diagnóstico D088</a>
+            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D088</a>
         </div>
     </div>
 
     <!-- D085 -->
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">Geometria e Cálculo de Áreas/Perímetros</h2>
+            <h3 class="card-title">Geometria Plana (Perímetro e Área)</h3>
             <span class="descritor-badge">D085</span>
         </div>
-        <p>Aplicação do Teorema de Pitágoras, decomposição de figuras planas e áreas de triângulos e quadriláteros.</p>
+        <p>Cálculo de áreas, decomposição de polígonos e Teorema de Pitágoras.</p>
         <div class="links-group">
-            <a href="https://fabatra.github.io/d085" target="_blank" class="btn btn-github">
-                📝 Diagnóstico Interativo (D085)
-            </a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">
-                ▶️ Vídeo-Aula: Geometria Plana
-            </a>
+            <a href="https://fabatra.github.io/d085" target="_blank" class="btn btn-github">📝 Diagnóstico D085</a>
+            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D085</a>
         </div>
     </div>
 
     <!-- D074 -->
     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">Leitura e Interpretação de Gráficos e Tabelas</h2>
+            <h3 class="card-title">Leitura de Gráficos e Tabelas</h3>
             <span class="descritor-badge">D074</span>
         </div>
-        <p>Tratamento de informação, análise de tendências, tabelas estatísticas e gráficos de linhas/barras.</p>
+        <p>Tratamento da informação, análise estatística e interpretação de tendências.</p>
         <div class="links-group">
-            <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">
-                📝 Diagnóstico Interativo (D074)
-            </a>
-            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">
-                ▶️ Vídeo-Aula: Análise de Gráficos
-            </a>
+            <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">📝 Diagnóstico D074</a>
+            <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">▶️ Vídeo-Aula D074</a>
         </div>
     </div>
 
+    <!-- SEÇÃO 2: PENDÊNCIAS INDIVIDUAIS DOS ALUNOS -->
+    <h2 class="section-title">2. Mapeamento de Pendências e Orientações para Alunos</h2>
+
+    <!-- Tabela Resumo para Consulta Rápida -->
+    <table class="student-table">
+        <thead>
+            <tr>
+                <th>Aluno(a)</th>
+                <th>Desempenho Registrado</th>
+                <th>Pendência / Ação em Sala</th>
+                <th>Links de Orientação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Rakely</strong></td>
+                <td>Exponencial: 2/5 (Necessita rever)</td>
+                <td>Assistir à vídeo-aula de Equação Exponencial e refazer diagnóstica até atingir 5/5.</td>
+                <td>
+                    <a href="https://www.youtube.com/watch?v=zLVJLsjqDSc" target="_blank" class="btn btn-youtube">📺 Aula</a>
+                    <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">📝 Teste</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Kethelen Liberato</strong></td>
+                <td>D088 e D085: 2/5 | QE: 2 &rarr; 5</td>
+                <td>Reforço em Álgebra e Geometria Plana. Fazer refazimento focado em gabaritar.</td>
+                <td>
+                    <a href="https://fabatra.github.io/d088" target="_blank" class="btn btn-github">📝 D088</a>
+                    <a href="https://fabatra.github.io/d085" target="_blank" class="btn btn-github">📝 D085</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Ester</strong></td>
+                <td>D124: 3/5 | D074: 3/5 | D085: 4/5</td>
+                <td>Refazer D124 e D074 para transicionar de 3 para 5 acertos.</td>
+                <td>
+                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
+                    <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">📝 D074</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Maira</strong></td>
+                <td>D124: 4/5 (1 chute) | D074/088/085: 4/5</td>
+                <td>Eliminar dependência de chute no D124. Rever vídeo e fazer gabarito rápido.</td>
+                <td>
+                    <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">📺 Aula</a>
+                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Eduardo</strong></td>
+                <td>D124: 3/5</td>
+                <td>Reforço em Equação da Reta. Assistir vídeo-aula e reavaliar.</td>
+                <td>
+                    <a href="https://www.youtube.com/@professortrancoso" target="_blank" class="btn btn-youtube">📺 Aula</a>
+                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Grazi</strong></td>
+                <td>D124: 5 | D088: 5 | D085: 5 | D074: 3/5</td>
+                <td>Ajuste pontual em Leitura de Gráficos (D074). Fazer rodada de velocidade.</td>
+                <td>
+                    <a href="https://fabatra.github.io/d074" target="_blank" class="btn btn-github">📝 D074</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Ezequiel</strong></td>
+                <td>QE: 1 &rarr; 4/5 | D088 e D085: 4/5</td>
+                <td>Treinar velocidade no refazimento do teste exponencial para buscar o 5/5 célere.</td>
+                <td>
+                    <a href="https://fabatra.github.io/questaoexponencial" target="_blank" class="btn btn-github">📝 Teste</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Kaylane, Matheus S., Laysa, Lucas M.</strong></td>
+                <td>D124: 3/5</td>
+                <td>Refazer a prova diagnóstica do D124 aplicando memorização e cálculo rápido.</td>
+                <td>
+                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 D124</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Beatriz & Gustavo</strong></td>
+                <td>Atendimento pendente</td>
+                <td>Realizar alinhamento individual em sala e aplicar os diagnósticos de entrada.</td>
+                <td>
+                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 Diagnóstico</a>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Rafaela, Marcely, Walber, Ana Clara, Gabriel, Yuri</strong></td>
+                <td>Desempenho Alto (4/5 e 5/5)</td>
+                <td>Fase de automação e agilidade: refazer diagnósticos em tempo reduzido para fixação PAEBES.</td>
+                <td>
+                    <a href="https://fabatra.github.io/d124" target="_blank" class="btn btn-github">📝 Geral</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
     <footer>
-        <p>Material de Acompanhamento Pedagógico Reta Final - PAEBES / AMA / ENEM</p>
+        <p>Acompanhamento Pedagógico Reta Final 3M1 - PAEBES / AMA / ENEM</p>
     </footer>
 </div>
 
